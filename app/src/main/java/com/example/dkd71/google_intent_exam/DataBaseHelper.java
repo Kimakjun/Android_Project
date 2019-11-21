@@ -44,6 +44,7 @@ public class DataBaseHelper extends SQLiteOpenHelper
     {
         //데이터베이스가 없으면 asset폴더에서 복사해온다.
         boolean mDataBaseExist = checkDataBase();
+
         if(!mDataBaseExist)
         {
             this.getReadableDatabase();

@@ -4,13 +4,18 @@
     android:layout_height="match_parent"
     >
 
-
     <Button
         android:onClick="onclicked"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="우리집 보여줘!!"
         />
+
+    <Button
+        android:onClick="onClick2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="음식점 보여줘!!" />
 
 
 

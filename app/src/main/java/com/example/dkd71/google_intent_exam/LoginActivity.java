@@ -1,6 +1,7 @@
 package com.example.dkd71.google_intent_exam;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -65,6 +66,10 @@ public class LoginActivity extends AppCompatActivity {
                 if (ID_PW.keySet().contains(inputID)) { // ID가 DB안에 있으면
 
                     if (ID_PW.get(inputID).equals(inputPW)) {
+                        SharedPreferences settings = getSharedPreferences("share", 0);
+                        SharedPreferences.Editor editor = settings.edit();
+                        editor.putString("id", Login_et1.getText().toString());
+                        editor.commit();
                         Toast.makeText(getApplicationContext(), "로그인 성공", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(this, MAIN.class);
                         startActivity(intent);

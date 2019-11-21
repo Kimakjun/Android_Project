@@ -33,6 +33,8 @@
         <activity android:name=".GEUMHO" android:label="geumho"></activity>
         <activity android:name=".SOMEWHERE" android:label="somewhere"></activity>
         <activity android:name=".MAIN" android:label="MAIN"></activity>
+        <activity android:name=".ShowActivity" android:label="show"></activity>
+        <activity android:name=".CommunityActivity" android:label="community"></activity>
     </application>
 
 </manifest>
