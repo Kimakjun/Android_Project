@@ -12,7 +12,7 @@ import java.util.List;
 
 public class DataAdapter {
     protected static final String TAG = "DataAdapter";
-
+    // ㅎㅇㅎㅇ 나야
     // TODO : TABLE 이름을 명시해야함
     protected static final String TABLE_NAME = "members";
 
