@@ -20,7 +20,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBBZI0WxEcxTuWpWd62Ykh3igFCCtoloZQ" />
 
-        <activity android:name=".MAIN">
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -31,6 +31,7 @@
         <activity android:name=".MainActivity" android:label="mainmain"></activity>
         <activity android:name=".GEUMHO" android:label="geumho"></activity>
         <activity android:name=".SOMEWHERE" android:label="somewhere"></activity>
+        <activity android:name=".MAIN" android:label="MAIN"></activity>
     </application>
 
 </manifest>
