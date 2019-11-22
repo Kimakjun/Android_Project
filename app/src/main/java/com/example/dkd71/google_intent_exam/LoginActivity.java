@@ -2,6 +2,7 @@ package com.example.dkd71.google_intent_exam;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -38,6 +39,9 @@ public class LoginActivity extends AppCompatActivity {
         initLoadDB();
         Login_bt.setBackgroundColor(getResources().getColor(R.color.colorBlueGray));
         Login_ll.setBackgroundColor(getResources().getColor(R.color.colorBackground));
+        Login_et1.setTextColor(Color.BLACK);
+        Login_et2.setTextColor(Color.BLACK);
+
     }
 
     private void initLoadDB() {
