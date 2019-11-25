@@ -53,11 +53,19 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private Marker currentMarker = null;
     private GoogleMap mGoogleMap = null;
 
-    private  static final LatLng GEUMHO = new LatLng(37.548212, 127.0198441);
-    private  static final LatLng SOMEWHERE = new LatLng(37.549225, 127.0198541);
+    private  static final LatLng CHAESUNDANG = new LatLng(37.5642047, 126.983601);
+    private  static final LatLng DONGGAS = new LatLng(37.5677377, 127.008310);
+    private  static final LatLng MUNGDONGKYOGA = new LatLng(37.5625562, 126.985741);
+    private  static final LatLng KIMGANAE = new LatLng(37.5635659, 126.991094);
+    private  static final LatLng PILDONG = new LatLng(37.5603768, 126.996901);
 
-    private Marker mGeumho;
-    private Marker mSomewhere;
+
+
+    private Marker mChaesundang;
+    private Marker mDonggas;
+    private Marker mMungdongkyoga;
+    private Marker mKimganae;
+    private Marker mPildong;
 
     private GoogleMap mMap;
 
@@ -156,11 +164,14 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         });
 
 
-        mGeumho = mMap.addMarker(new MarkerOptions().position(GEUMHO).title("금호집!!"));
-        mSomewhere = mMap.addMarker(new MarkerOptions().position(SOMEWHERE).title("어딘가!!"));
+        mChaesundang = mMap.addMarker(new MarkerOptions().position(CHAESUNDANG).title("채선당"));
+        mMungdongkyoga = mMap.addMarker(new MarkerOptions().position(MUNGDONGKYOGA).title("명동교자"));
+        mDonggas = mMap.addMarker(new MarkerOptions().position(DONGGAS).title("수제왕돈까스"));
+        mKimganae = mMap.addMarker(new MarkerOptions().position(KIMGANAE).title("김가네"));
+        mPildong = mMap.addMarker(new MarkerOptions().position(PILDONG).title("채선당"));
 
 
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(GEUMHO, 16));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(PILDONG, 16));
         mMap.setOnMarkerClickListener(this);
     }
     @Override
@@ -225,19 +236,19 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     public boolean onMarkerClick(Marker marker) {
         Toast.makeText(this, "마커클릭", Toast.LENGTH_SHORT).show();
 
-        if (marker.equals(mGeumho)){
-            Toast.makeText(getApplication(), "금호클릭", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(this, GEUMHO.class);
-            startActivity(intent);
-        }
-        else if(marker.equals(mSomewhere)){
-            Toast.makeText(getApplication(), "다른곳클릭", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(this, SOMEWHERE.class);
-            startActivity(intent);
-        }
-        else{
-
-        }
+//        if (marker.equals(mGeumho)){
+//            Toast.makeText(getApplication(), "금호클릭", Toast.LENGTH_SHORT).show();
+//            Intent intent = new Intent(this, GEUMHO.class);
+//            startActivity(intent);
+//        }
+//        else if(marker.equals(mSomewhere)){
+//            Toast.makeText(getApplication(), "다른곳클릭", Toast.LENGTH_SHORT).show();
+//            Intent intent = new Intent(this, SOMEWHERE.class);
+//            startActivity(intent);
+//        }
+//        else{
+//
+//        }
 
 
         return false;
