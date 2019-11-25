@@ -166,7 +166,7 @@ public class GpsActivity extends AppCompatActivity implements OnMapReadyCallback
         mMungdongkyoga = mMap.addMarker(new MarkerOptions().position(MUNGDONGKYOGA).title("명동교자"));
         mDonggas = mMap.addMarker(new MarkerOptions().position(DONGGAS).title("수제왕돈까스"));
         mKimganae = mMap.addMarker(new MarkerOptions().position(KIMGANAE).title("김가네"));
-        mPildong = mMap.addMarker(new MarkerOptions().position(PILDONG).title("채선당"));
+        mPildong = mMap.addMarker(new MarkerOptions().position(PILDONG).title("필동"));
 
 
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(PILDONG, 16));
@@ -232,21 +232,31 @@ public class GpsActivity extends AppCompatActivity implements OnMapReadyCallback
 
     @Override
     public boolean onMarkerClick(Marker marker) {
-        Toast.makeText(this, "마커클릭", Toast.LENGTH_SHORT).show();
 
-//        if (marker.equals(mGeumho)){
-//            Toast.makeText(getApplication(), "금호클릭", Toast.LENGTH_SHORT).show();
+
+        if (marker.equals(mMungdongkyoga)){
+            Toast.makeText(getApplication(), "명동교자 클릭", Toast.LENGTH_SHORT).show();
 //            Intent intent = new Intent(this, GEUMHO.class);
 //            startActivity(intent);
-//        }
-//        else if(marker.equals(mSomewhere)){
-//            Toast.makeText(getApplication(), "다른곳클릭", Toast.LENGTH_SHORT).show();
+        }
+        else if(marker.equals(mChaesundang)){
+            Toast.makeText(getApplication(), "채선당 클릭", Toast.LENGTH_SHORT).show();
 //            Intent intent = new Intent(this, SOMEWHERE.class);
 //            startActivity(intent);
-//        }
-//        else{
-//
-//        }
+        }
+        else if(marker.equals(mDonggas)){
+            Toast.makeText(getApplication(), "수제왕돈가스 클릭", Toast.LENGTH_SHORT).show();
+
+        }
+        else if(marker.equals(mKimganae)){
+            Toast.makeText(getApplication(), "김가네 클릭", Toast.LENGTH_SHORT).show();
+
+        }
+        else if (marker.equals(mPildong)){
+            Toast.makeText(getApplication(), "필동명옥 클릭", Toast.LENGTH_SHORT).show();
+
+        }
+
 
 
         return false;

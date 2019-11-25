@@ -6,7 +6,7 @@
 
     <Button
         android:id="@+id/choose_bt1"
-        android:onClick="onclick"
+        android:onClick="onClick"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="우리집 보여줘!!"

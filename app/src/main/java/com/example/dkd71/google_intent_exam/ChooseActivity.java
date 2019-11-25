@@ -20,7 +20,7 @@ public class ChooseActivity extends AppCompatActivity {
         Intent intent1;
         switch (view.getId()){
             case R.id.choose_bt1:
-                intent1 = new Intent(this,ChooseActivity.class);
+                intent1 = new Intent(this,GpsActivity.class);
                 startActivity(intent1);
                 break;
 
