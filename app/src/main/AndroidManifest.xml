@@ -29,12 +29,13 @@
 
         </activity>
 
-        <activity android:name=".MainActivity" android:label="mainmain"></activity>
+        <activity android:name=".GpsActivity" android:label="mainmain"></activity>
         <activity android:name=".GEUMHO" android:label="geumho"></activity>
         <activity android:name=".SOMEWHERE" android:label="somewhere"></activity>
-        <activity android:name=".MAIN" android:label="MAIN"></activity>
+        <activity android:name=".ChooseActivity" android:label="MAIN"></activity>
         <activity android:name=".ShowActivity" android:label="show"></activity>
         <activity android:name=".CommunityActivity" android:label="community"></activity>
+        <activity android:name=".ListViewShowActivity" android:label="listviewshow"></activity>
     </application>
 
 </manifest>

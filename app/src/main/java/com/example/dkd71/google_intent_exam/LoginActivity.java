@@ -75,7 +75,7 @@ public class LoginActivity extends AppCompatActivity {
                         editor.putString("id", Login_et1.getText().toString());
                         editor.commit();
                         Toast.makeText(getApplicationContext(), "로그인 성공", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(this, MAIN.class);
+                        Intent intent = new Intent(this, ChooseActivity.class);
                         startActivity(intent);
                     } else {
                         Toast.makeText(getApplicationContext(), "비밀번호 틀림", Toast.LENGTH_SHORT).show();
