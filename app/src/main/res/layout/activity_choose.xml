@@ -9,18 +9,18 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:src="@drawable/KHJ"
+            android:src="@drawable/khj"
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="300dp" />
         <ImageView
-            android:src="@drawable/LKS"
+            android:src="@drawable/lks"
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="300dp" />
 
         <ImageView
-            android:src="@drawable/PYU"
+            android:src="@drawable/pyu"
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="300dp" />
