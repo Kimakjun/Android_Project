@@ -10,5 +10,9 @@
         android:id="@+id/menu2"
         android:title="업소명으로 내림차순 정렬"
         />
+    <item
+        android:id="@+id/menu3"
+        android:title="날짜별로 내림차순 정렬"
+        />
 
 </menu>

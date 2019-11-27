@@ -4,8 +4,10 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.PopupMenu;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -28,11 +30,8 @@ public class ListViewShowActivity extends AppCompatActivity {
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_listview);
-
         initLoadDB();
         oData = new ArrayList<>();
-
-
         for(int i=0; i<datalist.size(); i++){
             Datas oItem = new Datas();
             oItem.위반일자=datalist.get(i).위반일자;
@@ -58,6 +57,56 @@ public class ListViewShowActivity extends AppCompatActivity {
 
 
     }
+
+    public void onClick(View view){
+        PopupMenu popup = new PopupMenu(getApplicationContext(),view);
+        getMenuInflater().inflate(R.menu.listview_menu, popup.getMenu());
+        popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.menu1:
+                        Toast.makeText(getApplicationContext(), "업소별 오름차순으로 정렬", Toast.LENGTH_SHORT).show();
+                        Collections.sort(oData, new Comparator<Datas>() {
+                            @Override
+                            public int compare(Datas o1, Datas o2) {
+                                return o1.업소명.compareTo(o2.업소명);
+                            }
+                        });
+                        oAdapter.notifyDataSetChanged();
+                        break;
+
+                    case R.id.menu2:
+                        Toast.makeText(getApplicationContext(), "업소별 내림차순으로 정렬", Toast.LENGTH_SHORT).show();
+                        Collections.sort(oData, new Comparator<Datas>() {
+                            @Override
+                            public int compare(Datas o2, Datas o1) {
+                                return o1.업소명.compareTo(o2.업소명);
+                            }
+                        });
+                        oAdapter.notifyDataSetChanged();
+                        break;
+
+                    case R.id.menu3:
+                        Toast.makeText(getApplicationContext(), "날짜별 내림차순으로 정렬", Toast.LENGTH_SHORT).show();
+                        Collections.sort(oData, new Comparator<Datas>() {
+                            @Override
+                            public int compare(Datas o2, Datas o1) {
+                                return o1.위반일자.compareTo(o2.위반일자);
+                            }
+                        });
+                        oAdapter.notifyDataSetChanged();
+                        break;
+                }
+                return false;
+            }
+        });
+
+        popup.show();//Popup Menu 보이기
+
+
+    }
+
 
     private void initLoadDB() {
 
@@ -85,31 +134,4 @@ public class ListViewShowActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.menu1:
-                Toast.makeText(getApplicationContext(), "오름차순으로 정렬", Toast.LENGTH_SHORT).show();
-                Collections.sort(oData, new Comparator<Datas>() {
-                    @Override
-                    public int compare(Datas o1, Datas o2) {
-                        return o1.업소명.compareTo(o2.업소명);
-                    }
-                });
-                oAdapter.notifyDataSetChanged();
-                break;
-
-            case R.id.menu2:
-                Toast.makeText(getApplicationContext(), "내림차순으로 정렬", Toast.LENGTH_SHORT).show();
-                Collections.sort(oData, new Comparator<Datas>() {
-                    @Override
-                    public int compare(Datas o2, Datas o1) {
-                        return o1.업소명.compareTo(o2.업소명);
-                    }
-                });
-                oAdapter.notifyDataSetChanged();
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 }
