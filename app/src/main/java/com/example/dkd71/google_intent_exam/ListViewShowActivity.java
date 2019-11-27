@@ -1,10 +1,16 @@
 package com.example.dkd71.google_intent_exam;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -14,21 +20,22 @@ public class ListViewShowActivity extends AppCompatActivity {
 
     private ListView m_oListView = null;
     private List<Datas> datalist;
-    ArrayAdapter<String> madapter;
-    @Override
+    private ListAdapter oAdapter;
+    private ArrayList<Datas> oData;
+
+        @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_listview);
-        initLoadDB();
 
-        ArrayList<Datas> oData = new ArrayList<>();
-        List<String> temp_data = new LinkedList<>();
+        initLoadDB();
+        oData = new ArrayList<>();
 
 
         for(int i=0; i<datalist.size(); i++){
             Datas oItem = new Datas();
-            temp_data.add(datalist.get(i).업소명);
+            oItem.위반일자=datalist.get(i).위반일자;
             oItem.업소명 = datalist.get(i).업소명;
             oItem.처분내용 = datalist.get(i).처분내용;
             oItem.소재지지번 = datalist.get(i).소재지지번;
@@ -37,9 +44,16 @@ public class ListViewShowActivity extends AppCompatActivity {
 //        m_oListView = (ListView)findViewById(R.id.show_listvew_lv);
 //        madapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, temp_data);
 //        m_oListView.setAdapter(madapter);
+        //초기값은 최근 위반한 날짜부터.
+        Collections.sort(oData, new Comparator<Datas>() {
+            @Override
+            public int compare(Datas o1, Datas o2) {
+                return o2.위반일자.compareTo(o1.위반일자);
+            }
+        });
 
         m_oListView = (ListView)findViewById(R.id.show_listvew_lv);
-        ListAdapter oAdapter = new ListAdapter(oData);
+        oAdapter = new ListAdapter(oData);
         m_oListView.setAdapter(oAdapter);
 
 
@@ -63,4 +77,39 @@ public class ListViewShowActivity extends AppCompatActivity {
         mDbHelper2.close();
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.listview_menu, menu);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.menu1:
+                Toast.makeText(getApplicationContext(), "오름차순으로 정렬", Toast.LENGTH_SHORT).show();
+                Collections.sort(oData, new Comparator<Datas>() {
+                    @Override
+                    public int compare(Datas o1, Datas o2) {
+                        return o1.업소명.compareTo(o2.업소명);
+                    }
+                });
+                oAdapter.notifyDataSetChanged();
+                break;
+
+            case R.id.menu2:
+                Toast.makeText(getApplicationContext(), "내림차순으로 정렬", Toast.LENGTH_SHORT).show();
+                Collections.sort(oData, new Comparator<Datas>() {
+                    @Override
+                    public int compare(Datas o2, Datas o1) {
+                        return o1.업소명.compareTo(o2.업소명);
+                    }
+                });
+                oAdapter.notifyDataSetChanged();
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
 }

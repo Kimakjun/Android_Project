@@ -57,11 +57,13 @@ public class ListAdapter extends BaseAdapter
         TextView oTextTitle = (TextView) convertView.findViewById(R.id.textTitle);
         TextView oTextContents = (TextView) convertView.findViewById(R.id.textContents);
         TextView oTextAddress = (TextView) convertView.findViewById(R.id.textAddress);
+        TextView oTextDate = (TextView)convertView.findViewById(R.id.textDate);
 
 
         oTextTitle.setText(m_oData.get(position).업소명);
         oTextContents.setText(m_oData.get(position).처분내용);
         oTextAddress.setText(m_oData.get(position).소재지지번);
+        oTextDate.setText(m_oData.get(position).위반일자);
         return convertView;
     }
 }

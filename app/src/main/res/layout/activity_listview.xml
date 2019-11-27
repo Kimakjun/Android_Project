@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="100dp">
+    android:layout_height="150dp">
 
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="75"
+        android:layout_weight="1"
         android:orientation="vertical">
 
         <TextView
@@ -27,7 +29,8 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:text="처분내용"
-            android:layout_weight="40"
+            android:maxLength="20"
+            android:layout_weight="60"
             android:gravity="center_vertical"
             android:paddingLeft="10dp"
             />
@@ -37,7 +40,17 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:text="주소"
-            android:layout_weight="40"
+            android:maxLength="20"
+            android:layout_weight="60"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            />
+        <TextView
+            android:id="@+id/textDate"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="위반일자"
+            android:layout_weight="60"
             android:gravity="center_vertical"
             android:paddingLeft="10dp"
             />
