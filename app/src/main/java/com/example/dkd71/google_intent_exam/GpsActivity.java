@@ -15,6 +15,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.util.Log;
+import android.view.View;
 import android.view.WindowManager;
 import android.widget.Toast;
 
@@ -50,6 +51,8 @@ public class GpsActivity extends AppCompatActivity implements OnMapReadyCallback
     private GoogleApiClient mGoogleApiClient = null;
     private Marker currentMarker = null;
     private GoogleMap mGoogleMap = null;
+
+    int toggle = 0;
 
     private  static final LatLng CHAESUNDANG = new LatLng(37.5642047, 126.983601);
     private  static final LatLng DONGGAS = new LatLng(37.5677377, 127.008310);
@@ -166,11 +169,12 @@ public class GpsActivity extends AppCompatActivity implements OnMapReadyCallback
         mMungdongkyoga = mMap.addMarker(new MarkerOptions().position(MUNGDONGKYOGA).title("명동교자"));
         mDonggas = mMap.addMarker(new MarkerOptions().position(DONGGAS).title("수제왕돈까스"));
         mKimganae = mMap.addMarker(new MarkerOptions().position(KIMGANAE).title("김가네"));
-        mPildong = mMap.addMarker(new MarkerOptions().position(PILDONG).title("필동"));
+        mPildong = mMap.addMarker(new MarkerOptions().position(PILDONG).title("필동면옥"));
 
 
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(PILDONG, 16));
         mMap.setOnMarkerClickListener(this);
+
     }
     @Override
     public void onResume() {
@@ -233,29 +237,56 @@ public class GpsActivity extends AppCompatActivity implements OnMapReadyCallback
     @Override
     public boolean onMarkerClick(Marker marker) {
 
-
+    if(toggle == 0){
         if (marker.equals(mMungdongkyoga)){
-            Toast.makeText(getApplication(), "명동교자 클릭", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplication(), "명동 교자", Toast.LENGTH_SHORT).show();
 //            Intent intent = new Intent(this, GEUMHO.class);
 //            startActivity(intent);
         }
         else if(marker.equals(mChaesundang)){
-            Toast.makeText(getApplication(), "채선당 클릭", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplication(), "채선당", Toast.LENGTH_SHORT).show();
 //            Intent intent = new Intent(this, SOMEWHERE.class);
 //            startActivity(intent);
         }
         else if(marker.equals(mDonggas)){
-            Toast.makeText(getApplication(), "수제왕돈가스 클릭", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplication(), "수제왕돈까스", Toast.LENGTH_SHORT).show();
 
         }
         else if(marker.equals(mKimganae)){
-            Toast.makeText(getApplication(), "김가네 클릭", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplication(), "김가네", Toast.LENGTH_SHORT).show();
 
         }
         else if (marker.equals(mPildong)){
-            Toast.makeText(getApplication(), "필동명옥 클릭", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplication(), "필동명옥", Toast.LENGTH_SHORT).show();
 
         }
+        toggle = 1;
+    }
+    else if(toggle == 1){
+        if (marker.equals(mMungdongkyoga)){
+            Intent intent = new Intent(this, GEUMHO.class);
+            startActivity(intent);
+        }
+        else if(marker.equals(mChaesundang)){
+            Toast.makeText(getApplication(), "채선당", Toast.LENGTH_SHORT).show();
+//            Intent intent = new Intent(this, SOMEWHERE.class);
+//            startActivity(intent);
+        }
+        else if(marker.equals(mDonggas)){
+            Toast.makeText(getApplication(), "수제왕돈까스", Toast.LENGTH_SHORT).show();
+
+        }
+        else if(marker.equals(mKimganae)){
+            Toast.makeText(getApplication(), "김가네", Toast.LENGTH_SHORT).show();
+
+        }
+        else if (marker.equals(mPildong)){
+            Toast.makeText(getApplication(), "필동명옥", Toast.LENGTH_SHORT).show();
+
+        }
+        toggle = 0;
+    }
+
 
 
 
@@ -558,7 +589,7 @@ public class GpsActivity extends AppCompatActivity implements OnMapReadyCallback
         markerOptions.title(markerTitle);
         markerOptions.snippet(markerSnippet);
         markerOptions.draggable(true);
-
+        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE));
 
         currentMarker = mGoogleMap.addMarker(markerOptions);
 
@@ -605,6 +636,7 @@ public class GpsActivity extends AppCompatActivity implements OnMapReadyCallback
         }
 
     }
+
 
 
 }
