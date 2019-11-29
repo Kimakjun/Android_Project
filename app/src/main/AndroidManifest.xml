@@ -36,6 +36,7 @@
         <activity android:name=".ShowActivity" android:label="show"></activity>
         <activity android:name=".CommunityActivity" android:label="community"></activity>
         <activity android:name=".ListViewShowActivity" android:label="listviewshow"></activity>
+        <activity android:name=".Activity_PlidongMyeonok" android:label="필동면옥"></activity>
     </application>
 
 </manifest>

@@ -253,7 +253,7 @@ public class GpsActivity extends AppCompatActivity implements OnMapReadyCallback
 
         }
         else if (marker.equals(mPildong)){
-            Toast.makeText(getApplication(), "필동명옥 클릭", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplication(), "필동면옥 클릭", Toast.LENGTH_SHORT).show();
 
         }
 
