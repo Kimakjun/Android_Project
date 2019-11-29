@@ -29,9 +29,9 @@
         android:id="@+id/text2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="\n평양냉면 전문점\n 서울 중구 서애로 26 (필동3가 1-5)\n"
+        android:text="\n샤브샤브 전문점\n 서울특별시 중구 명동3길 12, (명동1가,지하1층)\n"
         android:textAlignment="center"
-        android:textSize="25dp"
+        android:textSize="24dp"
         />
 
     <LinearLayout
@@ -50,14 +50,14 @@
             <TextView
                 android:layout_width="500dp"
                 android:layout_height="wrap_content"
-                android:text=" 냉면 --------- 12,000원 \n\n"
-                android:textSize="20dp" />
+                android:text=" 스페셜 샤브샤브 ---- 14,000원 \n\n"
+                android:textSize="18dp" />
 
             <TextView
                 android:layout_width="500dp"
                 android:layout_height="wrap_content"
-                android:text=" 비빔냉면 ---- 12,000원 \n\n"
-                android:textSize="20dp" />
+                android:text=" 한우 샤브샤브 ------ 20,000원 \n\n"
+                android:textSize="18dp" />
 
         </LinearLayout>
 
@@ -70,14 +70,14 @@
             <TextView
                 android:layout_width="500dp"
                 android:layout_height="wrap_content"
-                android:text="접시만두 ---- 12,000원 \n\n"
-                android:textSize="20dp" />
+                android:text=" 모듬 샤브샤브 ---- 20,000원 \n\n"
+                android:textSize="18dp" />
 
             <TextView
                 android:layout_width="500dp"
                 android:layout_height="wrap_content"
-                android:text="제육 --------- 24,000원 \n\n"
-                android:textSize="20dp" />
+                android:text=" 해물 샤브샤브 ---- 20,000원 \n\n"
+                android:textSize="18dp" />
 
         </LinearLayout>
 
@@ -86,7 +86,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="120dp"
-        android:text="냉면을 먹기 전에 꼭 먹어줘야 하는 만두와 편육. 평양식 만두는 먹음직스러운 크기에 꽉찬 만두 속맛이 제격이고,편육은 질 좋은 고기를 잘 삶아서 독특한 새우젓 양념에 살짝 찍어 먹는 것이 일품이랍니다."
+        android:text="샤브샤브, 야채가 신선한 집 채선당입니다. "
         android:textSize="15dp" />
 
     <Button

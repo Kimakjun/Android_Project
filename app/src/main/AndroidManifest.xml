@@ -37,6 +37,11 @@
         <activity android:name=".CommunityActivity" android:label="community"></activity>
         <activity android:name=".ListViewShowActivity" android:label="listviewshow"></activity>
         <activity android:name=".Activity_PlidongMyeonok" android:label="필동면옥"></activity>
+        <activity android:name=".Activity_ChaeSunDang" android:label="채선당"></activity>
+        <activity android:name=".Activity_Kimganae" android:label="김가네"></activity>
+        <activity android:name=".Activity_MyoungDongGyoJa" android:label="명동교자"></activity>
+        <activity android:name=".Activity_NamsanDon" android:label="남산돈까스"></activity>
+
     </application>
 
 </manifest>
