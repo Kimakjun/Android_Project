@@ -86,7 +86,14 @@
   <TextView
       android:layout_width="match_parent"
       android:layout_height="120dp"
+      android:textAlignment="center"
       android:text="1966년 창업이후 명동에서 본점과 분점, 이태원에 직영점을 운영하고 있는 칼국수 전문 음식점입니다."
+      android:textSize="15dp" />
+
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="70dp"
+      android:text="위반사항 : 처분일자 20170831 // 제 71조 // 식품 및 조리 도구의 위생 취급에 문제가 있던 것으로 예상 - 시정명령으로 인한 시정 완료"
       android:textSize="15dp" />
 
   <Button

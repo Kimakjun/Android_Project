@@ -86,8 +86,15 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="120dp"
+        android:textAlignment="center"
         android:text="명동에 가성비 좋은 돈까스 맛집"
         android:textSize="20dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:text="위반사항 : 처분일자 20170417 /  법 제101조 제2조 제1항 / 종업원의 건강검진 문제"
+        android:textSize="15dp" />
 
     <Button
         android:id="@+id/button"

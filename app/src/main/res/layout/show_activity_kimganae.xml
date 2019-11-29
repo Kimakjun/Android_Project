@@ -86,7 +86,14 @@
   <TextView
       android:layout_width="match_parent"
       android:layout_height="120dp"
+      android:textAlignment="center"
       android:text="김가네 한옥마을점 입니다. 최고의 맛과 정성으로 행복을 전해드리겠습니다."
+      android:textSize="15dp" />
+
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="70dp"
+      android:text="위반사항 : 7조 위반 / 기준에 맞지 않은 식품 또는 식품첨가물의 제조ㆍ수입ㆍ가공ㆍ사용ㆍ조리ㆍ저장ㆍ소분ㆍ운반ㆍ보존ㆍ진열 문제"
       android:textSize="15dp" />
 
   <Button

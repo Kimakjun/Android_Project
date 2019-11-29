@@ -85,6 +85,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:textAlignment="center"
         android:text="냉면을 먹기 전에 꼭 먹어줘야 하는 만두와 편육"
         android:textSize="15dp" />
 
