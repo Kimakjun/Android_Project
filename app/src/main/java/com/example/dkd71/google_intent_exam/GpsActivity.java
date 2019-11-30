@@ -15,6 +15,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.util.Log;
+import android.view.View;
 import android.view.WindowManager;
 import android.widget.Toast;
 
@@ -50,6 +51,8 @@ public class GpsActivity extends AppCompatActivity implements OnMapReadyCallback
     private GoogleApiClient mGoogleApiClient = null;
     private Marker currentMarker = null;
     private GoogleMap mGoogleMap = null;
+
+    int toogle = 0;
 
     private  static final LatLng CHAESUNDANG = new LatLng(37.5642047, 126.983601);
     private  static final LatLng DONGGAS = new LatLng(37.5677377, 127.008310);
@@ -233,29 +236,67 @@ public class GpsActivity extends AppCompatActivity implements OnMapReadyCallback
     @Override
     public boolean onMarkerClick(Marker marker) {
 
+        if(toogle == 0){
 
-        if (marker.equals(mMungdongkyoga)){
-            Toast.makeText(getApplication(), "명동교자 클릭", Toast.LENGTH_SHORT).show();
+            if (marker.equals(mMungdongkyoga)){
+                Toast.makeText(getApplication(), "명동교자 입니다.", Toast.LENGTH_SHORT).show();
+
 //            Intent intent = new Intent(this, GEUMHO.class);
 //            startActivity(intent);
-        }
-        else if(marker.equals(mChaesundang)){
-            Toast.makeText(getApplication(), "채선당 클릭", Toast.LENGTH_SHORT).show();
+            }
+            else if(marker.equals(mChaesundang)){
+                Toast.makeText(getApplication(), "채선당 입니다.", Toast.LENGTH_SHORT).show();
 //            Intent intent = new Intent(this, SOMEWHERE.class);
 //            startActivity(intent);
+            }
+            else if(marker.equals(mDonggas)){
+                Toast.makeText(getApplication(), "수제왕돈가스 입니다.", Toast.LENGTH_SHORT).show();
+
+            }
+            else if(marker.equals(mKimganae)){
+                Toast.makeText(getApplication(), "김가네 입니다.", Toast.LENGTH_SHORT).show();
+
+            }
+            else if (marker.equals(mPildong)){
+                Toast.makeText(getApplication(), "필동명옥 입니다.", Toast.LENGTH_SHORT).show();
+
+            }
+            toogle = 1;
         }
-        else if(marker.equals(mDonggas)){
-            Toast.makeText(getApplication(), "수제왕돈가스 클릭", Toast.LENGTH_SHORT).show();
+
+        else if(toogle == 1){
+            toogle = 0;
+
+            if (marker.equals(mMungdongkyoga)){
+
+                Intent intent = new Intent(this, Activity_MyoungDongGyoJa.class);
+                startActivity(intent);
+            }
+            else if(marker.equals(mChaesundang)){
+                Intent intent = new Intent(this, Activity_ChaeSunDang.class);
+                startActivity(intent);
+
+
+            }
+            else if(marker.equals(mDonggas)){
+                Intent intent = new Intent(this, Activity_NamsanDon.class);
+                startActivity(intent);
+
+            }
+            else if(marker.equals(mKimganae)){
+                Intent intent = new Intent(this, Activity_Kimganae.class);
+                startActivity(intent);
+            }
+            else if (marker.equals(mPildong)){
+                Intent intent = new Intent(this, Activity_PlidongMyeonok.class);
+                startActivity(intent);
+
+            }
+
 
         }
-        else if(marker.equals(mKimganae)){
-            Toast.makeText(getApplication(), "김가네 클릭", Toast.LENGTH_SHORT).show();
 
-        }
-        else if (marker.equals(mPildong)){
-            Toast.makeText(getApplication(), "필동명옥 클릭", Toast.LENGTH_SHORT).show();
 
-        }
 
 
 
@@ -558,7 +599,7 @@ public class GpsActivity extends AppCompatActivity implements OnMapReadyCallback
         markerOptions.title(markerTitle);
         markerOptions.snippet(markerSnippet);
         markerOptions.draggable(true);
-
+        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE));
 
         currentMarker = mGoogleMap.addMarker(markerOptions);
 
@@ -607,4 +648,8 @@ public class GpsActivity extends AppCompatActivity implements OnMapReadyCallback
     }
 
 
+    public void onclick_web(View view) {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://kimakjun.github.io/Test/index.html"));
+        startActivity(intent);
+    }
 }
