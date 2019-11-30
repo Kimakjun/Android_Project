@@ -6,6 +6,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.PopupMenu;
 import android.widget.Toast;
@@ -24,12 +25,14 @@ public class ListViewShowActivity extends AppCompatActivity {
     private List<Datas> datalist;
     private ListAdapter oAdapter;
     private ArrayList<Datas> oData;
+    private EditText show_lv_et;
 
         @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_listview);
+        show_lv_et=(EditText)findViewById(R.id.show_lv_et);
         initLoadDB();
         oData = new ArrayList<>();
         for(int i=0; i<datalist.size(); i++){
@@ -58,9 +61,28 @@ public class ListViewShowActivity extends AppCompatActivity {
 
     }
 
+    public void onClick2(View view){
+            String searchName = show_lv_et.getText().toString();
+            ArrayList<Datas> arr = new ArrayList<>();
+            searchName=searchName.replaceAll(" ","");
+            for(Datas name : oData){
+                String foundName = name.업소명;
+                foundName= foundName.replaceAll(" ","");
+                if(foundName.equals(searchName)){
+                    arr.add(name);
+                }
+            }
+            oAdapter = new ListAdapter(arr);
+            m_oListView.setAdapter(oAdapter);
+            oAdapter.notifyDataSetChanged();
+
+    }
+
     public void onClick(View view){
+
         PopupMenu popup = new PopupMenu(getApplicationContext(),view);
         getMenuInflater().inflate(R.menu.listview_menu, popup.getMenu());
+        oAdapter = new ListAdapter(oData);
         popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
