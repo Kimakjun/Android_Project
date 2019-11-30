@@ -83,6 +83,7 @@ public class ListViewShowActivity extends AppCompatActivity {
         PopupMenu popup = new PopupMenu(getApplicationContext(),view);
         getMenuInflater().inflate(R.menu.listview_menu, popup.getMenu());
         oAdapter = new ListAdapter(oData);
+        m_oListView.setAdapter(oAdapter);
         popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
