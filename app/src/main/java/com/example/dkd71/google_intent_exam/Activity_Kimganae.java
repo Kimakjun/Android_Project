@@ -9,20 +9,23 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Activity_Kimganae extends AppCompatActivity {
-    TextView textView1, textView2;
+    TextView title_kimganae;
     Button bt1;
+    String title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.show_activity_kimganae);
-        textView1 = (TextView) findViewById(R.id.text1);
-        textView2 = (TextView) findViewById(R.id.text2);
+        title_kimganae = (TextView) findViewById(R.id.title_kimganae);
         bt1 = (Button) findViewById(R.id.button);
+        title = title_kimganae.getText().toString();
     }
 
     public void onClick(View view) {
         Intent intent = new Intent(this, CommunityActivity.class);
+        intent.putExtra("mode", 4);
+        intent.putExtra("title", title);
         startActivity(intent);
     }
 }
