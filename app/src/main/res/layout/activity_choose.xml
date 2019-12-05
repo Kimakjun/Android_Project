@@ -9,21 +9,11 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:src="@drawable/khj"
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="300dp" />
-        <ImageView
-            android:src="@drawable/lks"
+            android:src="@drawable/picture_title"
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="300dp" />
 
-        <ImageView
-            android:src="@drawable/pyu"
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="300dp" />
 
     </LinearLayout>
 
@@ -31,7 +21,7 @@
     <Button
         android:id="@+id/choose_bt1"
         android:onClick="onClick"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="50dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="내 주변 업소 확인"
@@ -42,8 +32,8 @@
         android:onClick="onClick"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:text="미정" />
+        android:layout_marginBottom="50dp"
+        android:text="업소 별 평가 확인 및 댓글쓰기" />
 
     <Button
         android:id="@+id/choose_bt3"

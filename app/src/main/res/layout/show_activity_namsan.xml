@@ -43,13 +43,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
-            android:text="명동에 가성비 좋은 돈까스 맛집\n\n\n"
+            android:text="명동에 가성비 좋은 돈까스 맛집\n\n"
             android:textSize="20dp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="위반사항 :  처분일자 2017.04.17  \n법 제101조 제2조 제1항 \m 종업원의 건강검진 문제 \n-> 시정명령"
+            android:text="위반사항 : 처분일자 2017.04.17\n\n 제101조 제2조 제1항 \n종업원의 건강검진 문제 \n-> 시정명령"
             android:textSize="25dp" />
 
     </LinearLayout>

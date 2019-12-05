@@ -25,7 +25,7 @@ public class ChooseActivity extends AppCompatActivity {
                 break;
 
             case R.id.choose_bt2:
-                intent1 = new Intent(this, Activity_PlidongMyeonok.class);
+                intent1 = new Intent(this, CommunityActivity.class);
                 startActivity(intent1);
                 break;
 

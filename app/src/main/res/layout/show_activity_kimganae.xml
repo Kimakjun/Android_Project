@@ -36,21 +36,21 @@
 
   <LinearLayout
       android:layout_width="match_parent"
-      android:layout_height="400dp"
+      android:layout_height="380dp"
       android:orientation="vertical">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
-        android:text="김가네 한옥마을점 입니다. \n최고의 맛과 정성으로 행복을 전해드리겠습니다.\n\n\n"
+        android:text="김가네 한옥마을점 입니다. \n최고의 맛과 정성으로 행복을 전해드리겠습니다.\n\n"
         android:textSize="18dp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="위반사항 : 처분일자 2014.11.04 \n제7조 위반 \n기준에 맞지 않은 식품 또는 식품첨가물의 제조ㆍ수입ㆍ가공ㆍ사용ㆍ조리ㆍ저장ㆍ소분ㆍ운반ㆍ보존ㆍ진열 문제 \n-> 시정명령"
-        android:textSize="25dp" />
+        android:text="위반사항 : 처분일자 2014.11.04\n 제7조 위반 \n\n기준에 맞지 않은 식품 또는 식품첨가물의 제조ㆍ수입ㆍ가공ㆍ사용ㆍ조리ㆍ저장ㆍ소분ㆍ운반ㆍ보존ㆍ진열 문제 \n-> 시정명령"
+        android:textSize="22dp" />
 
   </LinearLayout>
 

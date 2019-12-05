@@ -33,7 +33,6 @@
         <activity android:name=".GEUMHO" android:label="geumho"></activity>
         <activity android:name=".SOMEWHERE" android:label="somewhere"></activity>
         <activity android:name=".ChooseActivity" android:label="MAIN"></activity>
-        <activity android:name=".ShowActivity" android:label="show"></activity>
         <activity android:name=".CommunityActivity" android:label="community"></activity>
         <activity android:name=".ListViewShowActivity" android:label="listviewshow"></activity>
         <activity android:name=".Activity_PlidongMyeonok" android:label="필동면옥"></activity>

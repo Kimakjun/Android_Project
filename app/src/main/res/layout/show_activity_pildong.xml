@@ -49,7 +49,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="위반사항 :  처분일자 2017.08.31 \n제 71조  \n식품 및 조리 도구의 위생 취급에 문제가 있던 것으로 예상 \n-> 시정명령으로 인한 시정 완료"
+            android:text="위반사항 : 처분일자 2017.08.31 \n\n 제 71조  \n식품 및 조리 도구의 위생 취급에 문제가 있던 것으로 예상 \n\n-> 시정명령으로 인한 시정 완료"
             android:textSize="25dp" />
 
 
