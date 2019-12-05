@@ -54,10 +54,10 @@ public class GpsActivity extends AppCompatActivity implements OnMapReadyCallback
 
     int toogle = 0;
 
-    private  static final LatLng CHAESUNDANG = new LatLng(37.5642047, 126.983601);
-    private  static final LatLng DONGGAS = new LatLng(37.5677377, 127.008310);
+    private  static final LatLng CHAESUNDANG = new LatLng(37.5606651, 126.997682);
+    private  static final LatLng DONGGAS = new LatLng(37.5646913, 126.983850);
     private  static final LatLng MUNGDONGKYOGA = new LatLng(37.5625562, 126.985741);
-    private  static final LatLng KIMGANAE = new LatLng(37.5635659, 126.991094);
+    private  static final LatLng KIMGANAE = new LatLng(37.5607550, 126.993109);
     private  static final LatLng PILDONG = new LatLng(37.5603768, 126.996901);
 
 
@@ -169,7 +169,7 @@ public class GpsActivity extends AppCompatActivity implements OnMapReadyCallback
         mMungdongkyoga = mMap.addMarker(new MarkerOptions().position(MUNGDONGKYOGA).title("명동교자"));
         mDonggas = mMap.addMarker(new MarkerOptions().position(DONGGAS).title("수제왕돈까스"));
         mKimganae = mMap.addMarker(new MarkerOptions().position(KIMGANAE).title("김가네"));
-        mPildong = mMap.addMarker(new MarkerOptions().position(PILDONG).title("필동"));
+        mPildong = mMap.addMarker(new MarkerOptions().position(PILDONG).title("필동면옥"));
 
 
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(PILDONG, 16));
@@ -258,7 +258,7 @@ public class GpsActivity extends AppCompatActivity implements OnMapReadyCallback
 
             }
             else if (marker.equals(mPildong)){
-                Toast.makeText(getApplication(), "필동명옥 입니다.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplication(), "필동면옥 입니다.", Toast.LENGTH_SHORT).show();
 
             }
             toogle = 1;
