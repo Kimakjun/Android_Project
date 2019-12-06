@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.RatingBar;
@@ -19,7 +20,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class CommunityActivity extends AppCompatActivity {
 
-
+    static int flag;
     RatingBar ratingBar;
     EditText editText;
     ListView listView;
@@ -30,6 +31,7 @@ public class CommunityActivity extends AppCompatActivity {
     TextView pildong, namsan, myeongdong, kimganae, chaesundang;
     float score;
     int mode;
+    Button community_bt;
 
 
     long now = System.currentTimeMillis();
@@ -41,7 +43,10 @@ public class CommunityActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_community);
-
+        community_bt = (Button)findViewById(R.id.community_bt);
+        if(flag==1){
+            community_bt.setEnabled(false);
+        }
         editText = (EditText) findViewById(R.id.eText);
         listView = (ListView) findViewById(R.id.listview);
         ratingBar = (RatingBar) findViewById(R.id.ratingbar);

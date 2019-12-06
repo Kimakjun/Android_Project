@@ -26,6 +26,7 @@ public class Activity_MyoungDongGyoJa extends AppCompatActivity {
     public void onClick(View view) {
         Intent intent = new Intent(this, CommunityActivity.class);
         intent.putExtra("mode", 3);
+        CommunityActivity.flag=0;
         intent.putExtra("title", title);
         startActivity(intent);
     }

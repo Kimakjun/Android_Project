@@ -25,6 +25,7 @@ public class Activity_NamsanDon extends AppCompatActivity {
     public void onClick(View view) {
         Intent intent = new Intent(this, CommunityActivity.class);
         intent.putExtra("mode", 2);
+        CommunityActivity.flag=0;
         intent.putExtra("title", title);
         startActivity(intent);
     }

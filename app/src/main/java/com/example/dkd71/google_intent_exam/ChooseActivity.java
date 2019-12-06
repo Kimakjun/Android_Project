@@ -26,6 +26,7 @@ public class ChooseActivity extends AppCompatActivity {
 
             case R.id.choose_bt2:
                 intent1 = new Intent(this, CommunityActivity.class);
+                CommunityActivity.flag=1;
                 startActivity(intent1);
                 break;
 
